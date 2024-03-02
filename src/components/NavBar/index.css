@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Oleo+Script:wght@400;700&family=Satisfy&display=swap');
+
 .icons {
     color: #000;
     font-size: 25px;
 }
 
-.teste {
+.iconNav {
     position: fixed;
     left: 20px;
 }
@@ -21,6 +23,11 @@
 }
 
 .navBar h1 {
+    font-family: "Amaranth", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.096);
     margin: 0px;
 }
 
@@ -94,3 +101,33 @@
     margin-left: 16px;
 }
 
+@media(max-width: 850px) {
+    .navBar h1 {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 500px) {
+    .nav-menu {
+        width: 100%;
+        transition: 500ms;
+    }
+}
+
+@media(max-width: 480px) {
+    .navBar h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .iconNav {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 380px) {
+    .navBar h1 {
+        font-size: 1.5rem;
+    }
+}

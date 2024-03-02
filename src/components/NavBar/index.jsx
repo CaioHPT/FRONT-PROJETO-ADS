@@ -14,7 +14,7 @@ export default function NavBar() {
         <div>
             <IconContext.Provider value={{className: 'icons'}}>
                 <div className="navBar">
-                    <FaBars onClick={showSideBar} className='teste' />
+                    <FaBars onClick={showSideBar} className='iconNav' />
                     <h1>Travel Impacta</h1>
                 </div>
                 <nav className={!sidebar ? 'nav-menu active' : 'nav-menu'}>
