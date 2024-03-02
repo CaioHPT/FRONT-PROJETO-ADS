@@ -31,7 +31,7 @@ export const SideBarData = [
     {
         title: 'Cadastrar-se',
         path: '/criar-conta',
-        icon: <FaWpforms size={25} />,
+        icon: <FaWpforms />,
         className : 'nav-text'
     }
 ]
