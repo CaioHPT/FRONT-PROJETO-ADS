@@ -11,13 +11,13 @@ export default function NavBar() {
     const showSideBar = () => setSidebar(!sidebar)
     
     return (
-        <div>
+        <header>
             <IconContext.Provider value={{className: 'icons'}}>
-                <div className="navBar">
+                <nav className="navbar">
                     <FaBars onClick={showSideBar} className='iconNav' />
                     <h1>Travel Impacta</h1>
-                </div>
-                <nav className={!sidebar ? 'nav-menu active' : 'nav-menu'}>
+                </nav>
+                <aside className={!sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items'>
                         <li className='navbar-toggle'>
                             <a href="#" className='menu-bars'>
@@ -37,8 +37,8 @@ export default function NavBar() {
                             })
                         }
                     </ul>
-                </nav>
+                </aside>
             </IconContext.Provider>
-        </div>
+        </header>
     )
 }

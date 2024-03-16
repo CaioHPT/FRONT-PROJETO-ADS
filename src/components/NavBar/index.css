@@ -8,27 +8,33 @@
 .iconNav {
     position: fixed;
     left: 20px;
+    color: #fff;
 }
 
 .icons:hover {
     cursor: pointer;
 }
 
-.navBar {
-    background-color: #ffffff;
+.navbar {
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
-.navBar h1 {
+.navbar h1 {
     font-family: "Amaranth", sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 2.5rem;
-    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.096);
+    text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.11);
     margin: 0px;
+    color: #ffffff;
 }
 
 .menu-bars {
@@ -102,7 +108,7 @@
 }
 
 @media(max-width: 850px) {
-    .navBar h1 {
+    .navbar h1 {
         font-size: 2rem;
     }
 }
@@ -115,7 +121,7 @@
 }
 
 @media(max-width: 480px) {
-    .navBar h1 {
+    .navbar h1 {
         font-size: 1.7rem;
     }
 }
@@ -124,10 +130,8 @@
     .iconNav {
         font-size: 20px;
     }
-}
 
-@media(max-width: 380px) {
-    .navBar h1 {
+    .navbar h1 {
         font-size: 1.5rem;
     }
 }
