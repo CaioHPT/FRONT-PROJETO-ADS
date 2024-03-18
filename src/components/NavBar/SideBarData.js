@@ -12,25 +12,25 @@ export const SideBarData = [
     },
     {
         title: 'Viagens',
-        path: '/viagens',
+        path: '/trips',
         icon: <BsAirplaneFill />,
         className : 'nav-text'
     },
     {
         title: 'Sobre',
-        path: '#sobre',
+        path: '/#sobre',
         icon: <FaInfoCircle />,
         className : 'nav-text'
     },
     {
         title: 'Login',
-        path: '/login',
+        path: '/signIn',
         icon: <FaUserAlt />,
         className : 'nav-text'
     },
     {
         title: 'Cadastrar-se',
-        path: '/criar-conta',
+        path: '/register',
         icon: <FaWpforms />,
         className : 'nav-text'
     }

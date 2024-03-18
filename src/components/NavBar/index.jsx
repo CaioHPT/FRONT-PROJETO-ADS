@@ -4,6 +4,7 @@ import { FaBars } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
 import { SideBarData } from './SideBarData'
 import { IconContext } from 'react-icons' 
+import { Link } from 'react-router-dom'
 
 export default function NavBar() {
     const [sidebar, setSidebar] = useState(true)
@@ -28,10 +29,10 @@ export default function NavBar() {
                             SideBarData.map((item, index) => {
                                 return (
                                     <li key={index} className={item.className}>
-                                        <a href={item.path}>
+                                        <Link to={item.path}>
                                             {item.icon}
                                             <span>{item.title}</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                 )    
                             })
