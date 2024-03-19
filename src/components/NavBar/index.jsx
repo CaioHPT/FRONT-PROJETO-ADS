@@ -21,9 +21,9 @@ export default function NavBar() {
                 <aside className={!sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items'>
                         <li className='navbar-toggle'>
-                            <a href="#" className='menu-bars'>
+                            <span href="" className='menu-bars'>
                                 <AiOutlineClose onClick={showSideBar} />
-                            </a>
+                            </span>
                         </li>
                         {
                             SideBarData.map((item, index) => {

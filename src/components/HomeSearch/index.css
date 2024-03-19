@@ -1,11 +1,12 @@
 .container {
     background: url("../../../public/assets/homeSearch.jpg") no-repeat center;
-    height: 85vh;
+    height: 80vh;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    box-shadow: 0px 2px 40px 10px rgba(0, 0, 0, 0.288);
 }
 
 .formHome {
