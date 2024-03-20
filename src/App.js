@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Trips from './pages/Trips';
+import Adm from './pages/Adm';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/trips' Component={Trips} />
             <Route path='/signIn' Component={Login} />
             <Route path='/register' Component={Register} />
+            <Route path='/adm' Component={Adm} />
             <Route path='*' Component={NotFound} />
           </Routes>
         </Router>
