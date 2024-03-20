@@ -1,15 +1,21 @@
 import './index.css'
 
 import Card from '../../components/Card'
-import Paris from '../../assets/paris.jpg'
-import Maldivas from '../../assets/maldivas.jpg'
-import Disney from '../../assets/disney.jpg'
-import RioDeJaneiro from '../../assets/riodejaneiro.jpg'
-import NovaZelandia from '../../assets/novazelandia.jpg'
 
 import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 export default function Adm() {
+
+    const [trips, setTrips] = useState([])
+
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:5000/viagens`)
+          .then(res => {
+            const trip = res.data;
+            setTrips(trip);
+          })
+    }, [])
 
     const sendTrip = event => {
         event.preventDefault();
@@ -50,11 +56,13 @@ export default function Adm() {
                 <div className='tripsAdm'>
                     <h2>Editar viagem</h2>
                     <div className='tripsEdit'>
-                        <Card image={Paris} title='Paris' price='R$400,0'/>
-                        <Card image={Maldivas} title='Maldivas' price='R$2300,0' />
-                        <Card image={Disney} title='Disney' price='R$700,0' />
-                        <Card image={RioDeJaneiro} title='Rio De Janeiro' price='R$800,0' />
-                        <Card image={NovaZelandia} title='Nova Zelandia' price='R$1000,0' />
+                        {
+                            trips.length === 0 ? 
+                            <h1>Nenhuma viagem cadastrada</h1> :
+                            trips.map(tripImpacta => 
+                                <Card image={tripImpacta.urlFoto} title={tripImpacta.destino} price={tripImpacta.valor} key={tripImpacta.id} />
+                            )
+                        }
                     </div>
                 </div>
             </section>

@@ -86,3 +86,18 @@
     cursor: pointer;
     background-color: #0455be;
 }
+
+@media(max-width: 840px) {
+    .adm {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .registerTrip {
+        width: 100%;
+    }
+
+    .tripsAdm {
+        width: 100%;
+    }
+}
