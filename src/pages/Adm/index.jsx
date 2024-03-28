@@ -10,12 +10,18 @@ export default function Adm() {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:5000/viagens`)
-          .then(res => {
-            const trip = res.data;
-            setTrips(trip);
-          })
+        getTrips()
     }, [])
+
+
+    const getTrips = () => {
+        axios.get(`http://127.0.0.1:5000/viagens`)
+        .then(res => {
+          const trip = res.data;
+          setTrips(trip);
+        })
+        .catch(() => setTrips([]))
+    }
 
     const sendTrip = event => {
         event.preventDefault();
@@ -30,11 +36,12 @@ export default function Adm() {
         }
 
         axios.post(`http://127.0.0.1:5000/viagens`, trip)
-            .then(res => {console.log(res)})
+            .then(() => window.location.reload())
+            .catch(() => alert("Servidor fora do ar!"))
     }
 
     return(
-        <main>
+        <main className='containerAdm'>
             <h1>Área de administração</h1>
             <section className='adm'>
                 <div className='registerTrip'>
@@ -42,7 +49,7 @@ export default function Adm() {
                     <div className='formTrips'>
                         <form onSubmit={sendTrip}>
                             <label htmlFor="destino">Destino</label>
-                            <input type="text" name="destino" id="destino" />
+                            <input type="text" name="destino" id="destino" checke={true} />
                             <label htmlFor="origem">Origem</label>
                             <input type="text" name="origem" id="origem" />
                             <label htmlFor="valor">Valor</label>
@@ -57,9 +64,9 @@ export default function Adm() {
                     <h2>Editar viagem</h2>
                     <div className='tripsEdit'>
                         {
-                            trips.length === 0 ? 
-                            <h1>Nenhuma viagem cadastrada</h1> :
-                            trips.map(tripImpacta => 
+                            trips.length === 0  
+                            ? <h1>Nenhuma viagem cadastrada</h1> 
+                            : trips.map(tripImpacta => 
                                 <Card image={tripImpacta.urlFoto} title={tripImpacta.destino} price={tripImpacta.valor} key={tripImpacta.id} />
                             )
                         }

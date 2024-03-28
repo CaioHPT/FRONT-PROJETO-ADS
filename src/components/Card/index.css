@@ -60,7 +60,7 @@
     }
 }
 
-@media(max-width: 310px) {
+@media(max-width: 350px) {
     .card {
         min-width: 245px;
     }
