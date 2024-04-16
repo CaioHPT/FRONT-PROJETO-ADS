@@ -3,14 +3,15 @@
     border-radius: 10px;
     overflow: hidden;
     width: 300px;
-    min-width: 250px;
-    max-width: 20%;
+    min-width: 260px;
+    max-width: 30%;
     margin: 25px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     box-shadow: 5px 0px 50px 1px rgba(0, 0, 0, 0.075);
-    transition: all .2s ease-in-out; 
+    transition: all .2s ease-in-out;
 }
 
 .card img {
@@ -20,7 +21,12 @@
 
 .card a {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #000;
+    width: 100%;
 }
 
 .card:hover {
@@ -30,12 +36,56 @@
 }
 
 .textcard {
-    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px;
+    width: 100%;
 }
 
 .textcard h4 {
     font-size: 1.2rem;
     margin: 5px;
+}
+
+.binIconAdm {
+    color: red;
+    font-size: 1.3rem;
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.binIconAdm:hover {
+    cursor: pointer;
+}
+
+.modalDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modalDiv button {
+    width: 30%;
+    height: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    outline: none;
+    text-transform: uppercase;
+    transition: all ease-in-out .2s;
+}
+
+.modalDiv button:hover {
+    cursor: pointer;
+    filter: brightness(80%);
 }
 
 @media(max-width: 614px) {
