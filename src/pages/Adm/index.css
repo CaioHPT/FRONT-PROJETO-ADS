@@ -25,6 +25,7 @@
     width: 100%;
     border-radius: 10px;
     box-shadow: 0px 2px 30px 5px rgba(0, 0, 0, 0.13);
+    gap: 5px;
 }
 
 .formTrips {
@@ -55,7 +56,7 @@
 .formTrips input {
     border: none;
     border-radius: 5px;
-    width: 60%;
+    width: 70%;
     padding: 10px;
     outline: none;
     font-family: 'Poppins', sans-serif;
@@ -97,7 +98,68 @@
         width: 100%;
     }
 
+    .registerTrip h2{
+        font-size: 1.3rem;
+        margin-top: 0px;
+    }
+
     .tripsAdm {
         width: 100%;
+    }
+
+    .formTrips form {
+        width: 100%;
+        align-items: center;
+    }
+
+    .formTrips input {
+        width: 90%;
+    }
+    
+    .formTrips input[type="submit"] {
+        width: 40%;
+    }
+
+    .containerAdm h1 {
+        font-size: 1.5rem;
+        
+    }
+}
+
+@media(max-width: 480px) {
+    .registerTrip h2{
+        font-size: 1.1rem;
+    }
+
+    .containerAdm h1 {
+        font-size: 1.3rem;
+    }
+
+    .adm {
+        padding: 10px;
+    }
+
+    .formTrips label {
+        font-size: 1.1rem;
+    }
+
+    .formTrips input[type="submit"] {
+        font-size: 1rem;
+        width: 95%;
+    }
+
+    .formTrips input {
+        font-size: 1rem;
+    }
+
+    .tripsAdm h2{
+        font-size: 1.1rem;
+        margin: 25px 0px;
+    }
+}
+
+@media(max-width: 400px) {
+    .containerAdm h1 {
+        font-size: 1.2rem;
     }
 }

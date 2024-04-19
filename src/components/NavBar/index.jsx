@@ -11,25 +11,29 @@ export default function NavBar() {
 
     const showSideBar = () => setSidebar(!sidebar)
     
+    const closeSideBar = () => setSidebar(true)
+
     return (
         <header>
             <IconContext.Provider value={{className: 'icons'}}>
                 <nav className="navbar">
                     <FaBars onClick={showSideBar} className='iconNav' />
-                    <h1>Travel Impacta</h1>
+                    <Link to="/">
+                        <h1>Travel Impacta</h1>
+                    </Link>
                 </nav>
                 <aside className={!sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items'>
                         <li className='navbar-toggle'>
                             <span href="" className='menu-bars'>
-                                <AiOutlineClose onClick={showSideBar} />
+                                <AiOutlineClose onClick={closeSideBar} />
                             </span>
                         </li>
                         {
                             SideBarData.map((item, index) => {
                                 return (
                                     <li key={index} className={item.className}>
-                                        <Link to={item.path}>
+                                        <Link to={item.path} onClick={closeSideBar}>
                                             {item.icon}
                                             <span>{item.title}</span>
                                         </Link>

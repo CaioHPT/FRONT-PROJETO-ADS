@@ -7,21 +7,24 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Trips from './pages/Trips';
 import Adm from './pages/Adm';
+import ModalProvider from './context/Modal';
 
 function App() {
   return (
     <div className="App">
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route path='/' exact Component={Home} />
-            <Route path='/trips' Component={Trips} />
-            <Route path='/signIn' Component={Login} />
-            <Route path='/register' Component={Register} />
-            <Route path='/adm' Component={Adm} />
-            <Route path='*' Component={NotFound} />
-          </Routes>
-        </Router>
+        <ModalProvider>
+          <Router>
+            <NavBar />
+            <Routes>
+              <Route path='/' exact Component={Home} />
+              <Route path='/trips' Component={Trips} />
+              <Route path='/signIn' Component={Login} />
+              <Route path='/register' Component={Register} />
+              <Route path='/adm' Component={Adm} />
+              <Route path='*' Component={NotFound} />
+            </Routes>
+          </Router>
+        </ModalProvider>
     </div>
   );
 }
