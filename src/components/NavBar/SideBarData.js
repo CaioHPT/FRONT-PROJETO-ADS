@@ -18,12 +18,6 @@ export const SideBarData = [
         className : 'nav-text'
     },
     {
-        title: 'Sobre',
-        path: '/#sobre',
-        icon: <FaInfoCircle />,
-        className : 'nav-text'
-    },
-    {
         title: 'Login',
         path: '/signIn',
         icon: <FaUserAlt />,

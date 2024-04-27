@@ -1,0 +1,44 @@
+.containerTrips {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.trips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.trips div {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media(max-width: 840px) {
+    .trips h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width: 480px) {
+    .trips h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .trips h2 {
+        font-size: 1.2rem;
+    }
+}

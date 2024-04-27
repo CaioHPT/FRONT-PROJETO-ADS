@@ -1,0 +1,111 @@
+.formGetTrips {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.formGetTrips input[type="text"] {
+    width: 60%;
+    height: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 15px 1px rgba(7, 7, 7, 0.027);
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+}
+
+.formGetTrips input[type="submit"] {
+    width: 30%;
+    height: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.062);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0460D9;
+    outline: none;
+    text-transform: uppercase;
+    transition: all ease-in-out .2s;
+}
+
+.formGetTrips input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #0455be;
+}
+
+@media(max-width: 1700px) {
+    .formGetTrips {
+        width: 60%;
+    }
+}
+
+@media(max-width: 1000px) {
+    .formGetTrips {
+        width: 70%;
+    }
+}
+
+@media(max-width: 850px) {
+    .formGetTrips input[type="text"] {
+        font-size: 1rem;
+    }
+    
+    .formGetTrips input[type="submit"] {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 650px) {
+    .formGetTrips {
+        width: 85%;
+    }
+
+    .container {
+        height: 75vh;
+    }
+}
+
+@media(max-width: 480px) {
+    .formGetTrips input[type="text"] {
+        font-size: .9rem;
+    }
+    
+    .formGetTrips input[type="submit"] {
+        font-size: .9rem;
+    }
+}
+
+@media(max-width: 440px) {
+    .formGetTrips {
+        width: 95%;
+    }
+}
+
+@media(max-width: 400px) {
+    .formGetTrips input[type="text"] {
+        font-size: .8rem;
+        height: 20px;
+    }
+    
+    .formGetTrips input[type="submit"] {
+        font-size: .8rem;
+        height: 40px;
+    }
+
+    .container {
+        height: 65vh;
+    }
+}
+
+@media(max-width: 320px) {
+    .formGetTrips {
+        width: 100%;
+    }
+}
