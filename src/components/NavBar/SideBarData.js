@@ -1,4 +1,4 @@
-import { FaInfoCircle, FaUserAlt } from 'react-icons/fa'
+import { FaUserAlt } from 'react-icons/fa'
 import { AiFillHome } from 'react-icons/ai'
 import { BsAirplaneFill } from "react-icons/bs";
 import { FaWpforms } from "react-icons/fa6";

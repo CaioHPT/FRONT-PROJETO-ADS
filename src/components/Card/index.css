@@ -38,7 +38,7 @@
 .textcard {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     padding: 8px;
     width: 100%;
@@ -49,12 +49,22 @@
     margin: 5px;
 }
 
-.binIconAdm {
-    color: red;
+.binIconAdmDelete {
+    color: rgb(212, 79, 79);
     font-size: 1.3rem;
     align-self: flex-end;
+    position: absolute;
     margin-right: 10px;
 }
+
+.binIconAdmUpdate {
+    color: #5E9FF2;
+    font-size: 1.3rem;
+    align-self: flex-start;
+    position: absolute;
+    margin-left: 10px;
+}
+
 
 .binIconAdm:hover {
     cursor: pointer;
