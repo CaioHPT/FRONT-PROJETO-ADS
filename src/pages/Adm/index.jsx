@@ -150,13 +150,13 @@ export default function Adm() {
                     <div className='modalDiv formTrips'>
                         <form onSubmit={updateTrip}>
                             <label htmlFor="destino">Destino</label>
-                            <input type="text" name="destino" id="destino" checked={true} value={tripSelected != null ? tripSelected.destino : null} />
+                            <input type="text" name="destino" id="destino" checked={true} defaultValue={tripSelected != null ? tripSelected.destino : null} />
                             <label htmlFor="origem">Origem</label>
-                            <input type="text" name="origem" id="origem" value={tripSelected != null ? tripSelected.origem : null} />
+                            <input type="text" name="origem" id="origem" defaultValue={tripSelected != null ? tripSelected.origem : null} />
                             <label htmlFor="valor">Valor</label>
-                            <input type="number" name="valor" id="valor" value={tripSelected != null ? tripSelected.valor : null} />
+                            <input type="number" name="valor" id="valor" defaultValue={tripSelected != null ? tripSelected.valor : null} />
                             <label htmlFor="urlimagem">URL imagem</label>
-                            <input type="text" name="urlimagem" id="urlimagem" value={tripSelected != null ? tripSelected.urlFoto : null} />
+                            <input type="text" name="urlimagem" id="urlimagem" defaultValue={tripSelected != null ? tripSelected.urlFoto : null} />
                             <input type="submit" value="Atualizar" />
                         </form>
                     </div>
