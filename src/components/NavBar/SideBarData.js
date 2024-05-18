@@ -1,4 +1,4 @@
-import { FaInfoCircle, FaUserAlt } from 'react-icons/fa'
+import { FaUserAlt } from 'react-icons/fa'
 import { AiFillHome } from 'react-icons/ai'
 import { BsAirplaneFill } from "react-icons/bs";
 import { FaWpforms } from "react-icons/fa6";
@@ -15,12 +15,6 @@ export const SideBarData = [
         title: 'Viagens',
         path: '/trips',
         icon: <BsAirplaneFill />,
-        className : 'nav-text'
-    },
-    {
-        title: 'Sobre',
-        path: '/#sobre',
-        icon: <FaInfoCircle />,
         className : 'nav-text'
     },
     {

@@ -22,13 +22,15 @@ const styleModal = {
 
 
 export default function Adm() {
-    const { openModal, setOpenModal, idTripSelected } = useContext(ModalContext);
-    const handleClose = () => setOpenModal(false);
+    const { openModalDelete, setOpenModalDelete, idTripSelected } = useContext(ModalContext)
+    const { openModalUpdate, setOpenModalUpdate, tripSelected } = useContext(ModalContext)
+    const handleClose = () => setOpenModalDelete(false)
+    const handleCloseUpdate = () => setOpenModalUpdate(false)
 
     const deleteTrip = () => {
         axios.delete(`http://127.0.0.1:5000/viagens/${idTripSelected}`)
             .then(() => {
-                setOpenModal(false)
+                setOpenModalDelete(false)
                 getTrips()
             }).catch(() => alert("Erro ao deletar"))
     }
@@ -66,6 +68,23 @@ export default function Adm() {
             .catch(() => alert("Servidor fora do ar!"))
     }
 
+    const updateTrip = event => {
+        event.preventDefault();
+
+        const target = event.target
+        
+        const trip = {
+            destino: target.destino.value,
+            valor: target.valor.value,
+            origem: target.origem.value,
+            urlFoto: target.urlimagem.value
+        }
+
+        axios.put(`http://127.0.0.1:5000/viagens/${tripSelected.id}`, trip)
+            .then(() => window.location.reload())
+            .catch(() => alert("Servidor fora do ar!"))
+    }
+
     return (
         <main className='containerAdm'>
             <h1>Área de administração</h1>
@@ -75,7 +94,7 @@ export default function Adm() {
                     <div className='formTrips'>
                         <form onSubmit={sendTrip}>
                             <label htmlFor="destino">Destino</label>
-                            <input type="text" name="destino" id="destino" checked={true} />
+                            <input type="text" name="destino" id="destino" />
                             <label htmlFor="origem">Origem</label>
                             <input type="text" name="origem" id="origem" />
                             <label htmlFor="valor">Valor</label>
@@ -94,8 +113,9 @@ export default function Adm() {
                                 ? <h1>Nenhuma viagem cadastrada</h1>
                                 : trips.map(tripImpacta =>
                                     <Card
-                                        image={tripImpacta.urlFoto}
                                         title={tripImpacta.destino}
+                                        trip={tripImpacta}
+                                        image={tripImpacta.urlFoto}
                                         price={tripImpacta.valor}
                                         key={tripImpacta.id}
                                         isAdm={true}
@@ -106,7 +126,7 @@ export default function Adm() {
                 </div>
             </section>
             <Modal
-                open={openModal}
+                open={openModalDelete}
                 onClose={handleClose}
             >
                 <Box sx={styleModal}>
@@ -118,6 +138,27 @@ export default function Adm() {
                         <button style={{ background: '#5E9FF2' }} onClick={handleClose}>
                             Não
                         </button>
+                    </div>
+                </Box>
+            </Modal>
+            <Modal
+                open={openModalUpdate}
+                onClose={handleCloseUpdate}
+            >
+                <Box sx={styleModal}>
+                    <h3>Atualizar viagem</h3>
+                    <div className='modalDiv formTrips'>
+                        <form onSubmit={updateTrip}>
+                            <label htmlFor="destino">Destino</label>
+                            <input type="text" name="destino" id="destino" checked={true} defaultValue={tripSelected != null ? tripSelected.destino : null} />
+                            <label htmlFor="origem">Origem</label>
+                            <input type="text" name="origem" id="origem" defaultValue={tripSelected != null ? tripSelected.origem : null} />
+                            <label htmlFor="valor">Valor</label>
+                            <input type="number" name="valor" id="valor" defaultValue={tripSelected != null ? tripSelected.valor : null} />
+                            <label htmlFor="urlimagem">URL imagem</label>
+                            <input type="text" name="urlimagem" id="urlimagem" defaultValue={tripSelected != null ? tripSelected.urlFoto : null} />
+                            <input type="submit" value="Atualizar" />
+                        </form>
                     </div>
                 </Box>
             </Modal>
