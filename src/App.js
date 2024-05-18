@@ -8,11 +8,13 @@ import Register from './pages/Register';
 import Trips from './pages/Trips';
 import Adm from './pages/Adm';
 import ModalProvider from './context/Modal';
+import TripsProvider from './context/Trips';
 
 function App() {
   return (
     <div className="App">
-        <ModalProvider>
+      <ModalProvider>
+        <TripsProvider>
           <Router>
             <NavBar />
             <Routes>
@@ -24,7 +26,8 @@ function App() {
               <Route path='*' Component={NotFound} />
             </Routes>
           </Router>
-        </ModalProvider>
+        </TripsProvider>
+      </ModalProvider>
     </div>
   );
 }

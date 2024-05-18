@@ -1,23 +1,32 @@
 import './index.css'
 
-import InputTrips from '../../components/InputTrips'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
+import InputTrips from '../../components/InputTrips'
 import Card from '../../components/Card'
+import { TripsContext } from '../../context/Trips'
 
 export default function Trips() {
     const [trips, setTrips] = useState([])
+
+    const { tripsConsulta } = useContext(TripsContext)
 
     useEffect(() => {
         getTrips()
     }, [])
 
+    useEffect(() => {
+        if (tripsConsulta != null) {
+            setTrips(tripsConsulta)
+        }
+    }, [tripsConsulta])
+
 
     const getTrips = () => {
         axios.get(`http://127.0.0.1:5000/viagens`)
             .then(res => {
-                const trip = res.data;
-                setTrips(trip);
+                const trips = res.data;
+                setTrips(trips);
             })
             .catch(() => setTrips([]))
     }
