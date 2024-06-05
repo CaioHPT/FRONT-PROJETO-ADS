@@ -9,6 +9,7 @@ import Trips from './pages/Trips';
 import Adm from './pages/Adm';
 import ModalProvider from './context/Modal';
 import TripsProvider from './context/Trips';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path='/adm' Component={Adm} />
               <Route path='*' Component={NotFound} />
             </Routes>
+            <Footer />
           </Router>
         </TripsProvider>
       </ModalProvider>
