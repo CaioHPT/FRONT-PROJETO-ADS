@@ -5,9 +5,24 @@ import './index.css'
 import axios from 'axios'
 
 export default function InputTrips() {
-    const { setTripsConsulta } = useContext(TripsContext)
+    const { setTripsConsulta, inputTripValue, setInputTripValue} = useContext(TripsContext)
+
+    const getTrip = (event) => {
+        event.preventDefault()
+
+        const isCurrentTravelPage = window.location.pathname === "/trips"
+        const path = isCurrentTravelPage ? "" : "trips"
+        const url = new URL(window.location.href + path)
+
+        if (inputTripValue.trim() !== "") {
+            url.searchParams.set('destino', inputTripValue)
+        }
+
+        window.location.href = url
+    }
 
     const onChanceSetDestino = event => {
+        setInputTripValue(event.target.value)
         getTripsByDestino(event.target.value)
     }
 
@@ -22,8 +37,8 @@ export default function InputTrips() {
     }
 
     return (
-        <form className='formGetTrips'>
-            <input type="text" name='viagem' onChange={onChanceSetDestino} />
+        <form className='formGetTrips' onSubmit={getTrip}>
+            <input type="text" name='viagem' onChange={onChanceSetDestino} defaultValue={inputTripValue}/>
             <input type="submit" value="Pesquisar" />
         </form>
     )
