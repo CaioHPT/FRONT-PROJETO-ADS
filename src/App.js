@@ -1,6 +1,5 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer'
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
@@ -13,11 +12,6 @@ import ModalProvider from './context/Modal';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-      <Footer/>
-      <NavBar />
-        
-=======
         <ModalProvider>
           <Router>
             <NavBar />
@@ -31,7 +25,6 @@ function App() {
             </Routes>
           </Router>
         </ModalProvider>
->>>>>>> main
     </div>
   );
 }
