@@ -1,0 +1,33 @@
+.footer {
+    background-color: #dddadaad;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .conteudo-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info-contato {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .info-contato:hover span {
+    text-decoration: underline;
+  }
+  
+  .icone {
+    margin-right: 5px;
+  }
+  
