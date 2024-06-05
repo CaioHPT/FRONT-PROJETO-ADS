@@ -23,6 +23,7 @@ function App() {
               <Route path='/adm' Component={Adm} />
               <Route path='*' Component={NotFound} />
             </Routes>
+            <Footer/>
           </Router>
         </ModalProvider>
     </div>
