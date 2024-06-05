@@ -13,11 +13,6 @@ import ModalProvider from './context/Modal';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-      <Footer/>
-      <NavBar />
-        
-=======
         <ModalProvider>
           <Router>
             <NavBar />
@@ -29,9 +24,9 @@ function App() {
               <Route path='/adm' Component={Adm} />
               <Route path='*' Component={NotFound} />
             </Routes>
+            <Footer/>
           </Router>
         </ModalProvider>
->>>>>>> main
     </div>
   );
 }
