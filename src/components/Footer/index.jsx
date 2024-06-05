@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="conteudo-rodape">
 
                 <div className="info-contato">
-                    <FaEnvelope className="icone" /> <span>RODRIGO_LINDO@email.com</span>
+                    <FaEnvelope className="icone" /> <span>travelimpacta@email.com</span>
                 </div>
 
                 <div className="info-contato">
