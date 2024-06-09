@@ -14,9 +14,8 @@ export default function InputTrips() {
         const path = isCurrentTravelPage ? "" : "trips"
         const url = new URL(window.location.href + path)
 
-        if (inputTripValue.trim() !== "") {
-            url.searchParams.set('destino', inputTripValue)
-        }
+        url.searchParams.set('destino', inputTripValue)
+        
 
         window.location.href = url
     }
