@@ -10,7 +10,7 @@ export default function Login() {
     };
 
     return (
-        <div className="area-principal">
+        <main className="containerLogin">
             <main className="formulario">
                 <h1>Login</h1>
                 <p>Bem-vindo! Aqui temos viagens incríveis e descontos só para você.</p>
@@ -33,8 +33,8 @@ export default function Login() {
                         <button type="submit" className="entrar">Entrar</button>
                     </div>
                 </form>
-                <p>Novo por aqui? <Link to="/Register">Cadastre-se</Link></p>
+                <p>Novo por aqui? <Link to="/register">Cadastre-se</Link></p>
             </main>
-        </div>
+        </main>
     );
 }

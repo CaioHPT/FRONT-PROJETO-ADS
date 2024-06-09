@@ -24,7 +24,7 @@ export default function Cadastro() {
     };
 
     return (
-        <div className="area-principal">
+        <div className="containerRegister">
             <main className="formulario">
                 <h1>Cadastre-se</h1>
                 <form onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ export default function Cadastro() {
                     </table>
                     <button type="submit">Cadastrar</button>
                 </form>
-                <p>Já tem uma conta? <Link to="signIn">Faça login</Link></p>
+                <p>Já tem uma conta? <Link to="/signIn">Faça login</Link></p>
             </main>
         </div>
     );
