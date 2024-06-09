@@ -25,11 +25,11 @@ export default function Card(props) {
                 <img src={props.image} width={10} />
                 <div className='textcard'>
                     <h4>{props.title}</h4>
-                    <span>{props.price}</span>
+                    <span>R$ {props.price.replace(".", ",")}</span>
                     {props.isAdm
                         ? <>
                             <ImBin className='binIconAdmDelete' onClick={handleOpen} />
-                            <ImPencil className='binIconAdmUpdate' onClick={props.isAdm ? handleOpenUpdate : null}/>
+                            <ImPencil className='binIconAdmUpdate' onClick={props.isAdm ? handleOpenUpdate : null} />
                         </>
                         : <></>
                     }

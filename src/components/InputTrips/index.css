@@ -56,7 +56,7 @@
     .formGetTrips input[type="text"] {
         font-size: 1rem;
     }
-    
+
     .formGetTrips input[type="submit"] {
         font-size: 1rem;
     }
@@ -76,7 +76,7 @@
     .formGetTrips input[type="text"] {
         font-size: .9rem;
     }
-    
+
     .formGetTrips input[type="submit"] {
         font-size: .9rem;
     }
@@ -93,7 +93,7 @@
         font-size: .8rem;
         height: 20px;
     }
-    
+
     .formGetTrips input[type="submit"] {
         font-size: .8rem;
         height: 40px;

@@ -1,3 +1,7 @@
+.containerAdm {
+    margin-bottom: 15rem;
+}
+
 .adm {
     display: flex;
     justify-content: center;
@@ -98,7 +102,7 @@
         width: 100%;
     }
 
-    .registerTrip h2{
+    .registerTrip h2 {
         font-size: 1.3rem;
         margin-top: 0px;
     }
@@ -115,19 +119,19 @@
     .formTrips input {
         width: 90%;
     }
-    
+
     .formTrips input[type="submit"] {
         width: 40%;
     }
 
     .containerAdm h1 {
         font-size: 1.5rem;
-        
+
     }
 }
 
 @media(max-width: 480px) {
-    .registerTrip h2{
+    .registerTrip h2 {
         font-size: 1.1rem;
     }
 
@@ -152,7 +156,7 @@
         font-size: 1rem;
     }
 
-    .tripsAdm h2{
+    .tripsAdm h2 {
         font-size: 1.1rem;
         margin: 25px 0px;
     }

@@ -1,21 +1,22 @@
-import { useState } from 'react'
 import './index.css'
+
+import { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
 import { SideBarData } from './SideBarData'
-import { IconContext } from 'react-icons' 
+import { IconContext } from 'react-icons'
 import { Link } from 'react-router-dom'
 
 export default function NavBar() {
     const [sidebar, setSidebar] = useState(true)
 
     const showSideBar = () => setSidebar(!sidebar)
-    
+
     const closeSideBar = () => setSidebar(true)
 
     return (
         <header>
-            <IconContext.Provider value={{className: 'icons'}}>
+            <IconContext.Provider value={{ className: 'icons' }}>
                 <nav className="navbar">
                     <FaBars onClick={showSideBar} className='iconNav' />
                     <Link to="/">
@@ -38,7 +39,7 @@ export default function NavBar() {
                                             <span>{item.title}</span>
                                         </Link>
                                     </li>
-                                )    
+                                )
                             })
                         }
                     </ul>
