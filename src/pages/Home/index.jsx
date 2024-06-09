@@ -16,11 +16,11 @@ export default function Home() {
             <section className='sugestionTrips'>
                 <h3>Algumas das nossas viagens</h3>
                 <div className='tripsHome'>
-                    <Card image={Paris} title='Paris' price='R$400,0' />
-                    <Card image={Maldivas} title='Maldivas' price='R$2300,0' />
-                    <Card image={Disney} title='Disney' price='R$700,0' />
-                    <Card image={RioDeJaneiro} title='Rio De Janeiro' price='R$800,0' />
-                    <Card image={NovaZelandia} title='Nova Zelandia' price='R$1000,0' />
+                    <Card image={Paris} title='Paris' price='400,0' />
+                    <Card image={Maldivas} title='Maldivas' price='2300,0' />
+                    <Card image={Disney} title='Disney' price='700,0' />
+                    <Card image={RioDeJaneiro} title='Rio De Janeiro' price='800,0' />
+                    <Card image={NovaZelandia} title='Nova Zelandia' price='1000,0' />
                 </div>
             </section>
             <About />

@@ -99,7 +99,7 @@ export default function Adm() {
                             <label htmlFor="origem">Origem</label>
                             <input type="text" name="origem" id="origem" />
                             <label htmlFor="valor">Valor</label>
-                            <input type="number" name="valor" id="valor" />
+                            <input type="number" name="valor" id="valor" step={0.010} />
                             <label htmlFor="urlimagem">URL imagem</label>
                             <input type="text" name="urlimagem" id="urlimagem" />
                             <input type="submit" value="Criar" />
@@ -155,7 +155,7 @@ export default function Adm() {
                             <label htmlFor="origem">Origem</label>
                             <input type="text" name="origem" id="origem" defaultValue={tripSelected != null ? tripSelected.origem : null} />
                             <label htmlFor="valor">Valor</label>
-                            <input type="number" name="valor" id="valor" defaultValue={tripSelected != null ? tripSelected.valor : null} />
+                            <input type="number" name="valor" id="valor" defaultValue={tripSelected != null ? tripSelected.valor : null} step={0.010}/>
                             <label htmlFor="urlimagem">URL imagem</label>
                             <input type="text" name="urlimagem" id="urlimagem" defaultValue={tripSelected != null ? tripSelected.urlFoto : null} />
                             <input type="submit" value="Atualizar" />
