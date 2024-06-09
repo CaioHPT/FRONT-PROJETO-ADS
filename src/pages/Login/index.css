@@ -20,7 +20,7 @@
 .rotulo {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .formulario input[type="text"],
@@ -54,7 +54,7 @@
 .lembrete-senha {
   display: flex;
   align-items: center;
-  
+
 }
 
 .lembrete-senha {
@@ -69,13 +69,13 @@
 
 @media(max-width: 850px) {
   .formulario h1 {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 }
 
 @media(max-width: 480px) {
   .formulario h1 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
 

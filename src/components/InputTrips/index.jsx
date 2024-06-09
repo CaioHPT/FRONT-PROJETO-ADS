@@ -1,11 +1,11 @@
-import { useContext } from 'react';
-import { TripsContext } from '../../context/Trips';
 import './index.css'
 
+import { useContext } from 'react';
+import { TripsContext } from '../../context/Trips';
 import axios from 'axios'
 
 export default function InputTrips() {
-    const { setTripsConsulta, inputTripValue, setInputTripValue} = useContext(TripsContext)
+    const { setTripsConsulta, inputTripValue, setInputTripValue } = useContext(TripsContext)
 
     const getTrip = (event) => {
         event.preventDefault()
@@ -30,15 +30,14 @@ export default function InputTrips() {
         axios.get(`http://127.0.0.1:5000/viagem`, {
             params: {
                 destino
-            }
-        })
+            }})
             .then((res) => setTripsConsulta(res.data))
             .catch(() => alert("Servidor fora do ar!"))
     }
 
     return (
         <form className='formGetTrips' onSubmit={getTrip}>
-            <input type="text" name='viagem' onChange={onChanceSetDestino} defaultValue={inputTripValue}/>
+            <input type="text" name='viagem' onChange={onChanceSetDestino} defaultValue={inputTripValue} />
             <input type="submit" value="Pesquisar" />
         </form>
     )

@@ -32,7 +32,8 @@ export default function Adm() {
             .then(() => {
                 setOpenModalDelete(false)
                 getTrips()
-            }).catch(() => alert("Erro ao deletar"))
+            })
+            .catch(() => alert("Erro ao deletar"))
     }
 
     const [trips, setTrips] = useState([])
@@ -72,7 +73,7 @@ export default function Adm() {
         event.preventDefault();
 
         const target = event.target
-        
+
         const trip = {
             destino: target.destino.value,
             valor: target.valor.value,

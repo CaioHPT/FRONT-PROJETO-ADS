@@ -1,6 +1,7 @@
+import './index.css';
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './index.css';
 
 export default function Login() {
     const [lembrarSenha, setLembrarSenha] = useState(false);

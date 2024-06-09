@@ -1,5 +1,6 @@
-import InputTrips from '../InputTrips'
 import './index.css'
+
+import InputTrips from '../InputTrips'
 
 export default function HomeSearch() {
 

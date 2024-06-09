@@ -1,5 +1,6 @@
-import { FaEnvelope, FaPhone } from 'react-icons/fa'
 import './index.css'
+
+import { FaEnvelope, FaPhone } from 'react-icons/fa'
 
 export default function Footer() {
     return (

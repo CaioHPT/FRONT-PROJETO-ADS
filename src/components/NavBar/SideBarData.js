@@ -9,30 +9,30 @@ export const SideBarData = [
         title: 'Home',
         path: '/',
         icon: <AiFillHome />,
-        className : 'nav-text'
+        className: 'nav-text'
     },
     {
         title: 'Viagens',
         path: '/trips',
         icon: <BsAirplaneFill />,
-        className : 'nav-text'
+        className: 'nav-text'
     },
     {
         title: 'Login',
         path: '/signIn',
         icon: <FaUserAlt />,
-        className : 'nav-text'
+        className: 'nav-text'
     },
     {
         title: 'Cadastrar-se',
         path: '/register',
         icon: <FaWpforms />,
-        className : 'nav-text'
+        className: 'nav-text'
     },
     {
         title: 'ADM',
         path: '/adm',
         icon: <RiAdminFill />,
-        className : 'nav-text'
+        className: 'nav-text'
     }
 ]

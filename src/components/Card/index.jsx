@@ -29,7 +29,7 @@ export default function Card(props) {
                     {props.isAdm
                         ? <>
                             <ImBin className='binIconAdmDelete' onClick={handleOpen} />
-                            <ImPencil className='binIconAdmUpdate' onClick={props.isAdm ? handleOpenUpdate : null}/>
+                            <ImPencil className='binIconAdmUpdate' onClick={props.isAdm ? handleOpenUpdate : null} />
                         </>
                         : <></>
                     }

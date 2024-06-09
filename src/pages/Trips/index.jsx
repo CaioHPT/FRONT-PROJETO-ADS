@@ -9,7 +9,7 @@ import { TripsContext } from '../../context/Trips'
 export default function Trips() {
     const [trips, setTrips] = useState([])
 
-    const { tripsConsulta, setTripsConsulta, inputTripValue, setInputTripValue} = useContext(TripsContext)
+    const { tripsConsulta, setTripsConsulta, setInputTripValue } = useContext(TripsContext)
 
     useEffect(() => {
         getTrips()
@@ -31,17 +31,17 @@ export default function Trips() {
             axios.get(`http://127.0.0.1:5000/viagem`, {
                 params: {
                     destino: trip
-                }   
+                }
             })
                 .then((res) => setTripsConsulta(res.data))
                 .catch(() => alert("Servidor fora do ar!"))
         } else {
             axios.get(`http://127.0.0.1:5000/viagens`)
-            .then(res => {
-                const trips = res.data;
-                setTrips(trips);
-            })
-            .catch(() => setTrips([]))
+                .then(res => {
+                    const trips = res.data;
+                    setTrips(trips);
+                })
+                .catch(() => setTrips([]))
         }
     }
 
