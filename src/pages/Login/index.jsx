@@ -17,18 +17,12 @@ export default function Login() {
                 <p>Bem-vindo! Aqui temos viagens incríveis e descontos só para você.</p>
                 <form>
                     <div className="grupo-formulario">
-                        <label htmlFor="usuario" className="rotulo">Usuário:</label>
-                        <input type="text" id="usuario" name="usuario" />
+                        <label htmlFor="email" className="rotulo">Email:</label>
+                        <input type="email" id="email" name="email" />
                     </div>
                     <div className="grupo-formulario">
                         <label htmlFor="senha" className="rotulo">Senha:</label>
                         <input type="password" id="senha" name="senha" />
-                    </div>
-                    <div className="lembrete-senha">
-                        <label>
-                            <input type="checkbox" checked={lembrarSenha} onChange={alternarLembrarSenha} />
-                            Lembrar senha
-                        </label>
                     </div>
                     <div className="grupo-formulario">
                         <button type="submit" className="entrar">Entrar</button>
