@@ -36,7 +36,7 @@ export default function Cadastro() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const register = (e) => {
         e.preventDefault();
 
         if (dadosFormulario.confirmarSenha !== dadosFormulario.senha) {
@@ -85,7 +85,7 @@ export default function Cadastro() {
         <div className="containerRegister">
             <main className="formulario">
                 <h1>Cadastre-se</h1>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={register}>
                     <table>
                         <tbody>
                             <tr>
