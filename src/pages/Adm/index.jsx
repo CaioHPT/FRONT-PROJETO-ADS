@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import { LoginContext } from '../../context/Login'
 
 const styleModal = {
     position: 'absolute',
@@ -27,6 +28,8 @@ export default function Adm() {
     const [open, setOpen] = useState(false);
     const { openModalDelete, setOpenModalDelete, idTripSelected } = useContext(ModalContext)
     const { openModalUpdate, setOpenModalUpdate, tripSelected } = useContext(ModalContext)
+    const { login } = useContext(LoginContext)
+
     const handleClose = () => setOpenModalDelete(false)
     const handleCloseUpdate = () => setOpenModalUpdate(false)
 
@@ -42,6 +45,10 @@ export default function Adm() {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
+        if (!login) {
+            window.location.pathname = "/"
+        }
+
         getTrips()
     }, [])
 
