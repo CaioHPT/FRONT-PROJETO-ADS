@@ -7,6 +7,9 @@ import { ModalContext } from '../../context/Modal'
 
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
+import { LoginContext } from '../../context/Login'
 
 const styleModal = {
     position: 'absolute',
@@ -22,8 +25,11 @@ const styleModal = {
 
 
 export default function Adm() {
+    const [open, setOpen] = useState(false);
     const { openModalDelete, setOpenModalDelete, idTripSelected } = useContext(ModalContext)
     const { openModalUpdate, setOpenModalUpdate, tripSelected } = useContext(ModalContext)
+    const { login } = useContext(LoginContext)
+
     const handleClose = () => setOpenModalDelete(false)
     const handleCloseUpdate = () => setOpenModalUpdate(false)
 
@@ -39,8 +45,20 @@ export default function Adm() {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
+        if (!login) {
+            window.location.pathname = "/"
+        }
+
         getTrips()
     }, [])
+
+    const handleCloseSnackBar = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
 
 
     const getTrips = () => {
@@ -66,7 +84,7 @@ export default function Adm() {
 
         axios.post(`http://127.0.0.1:5000/viagens`, trip)
             .then(() => window.location.reload())
-            .catch(() => alert("Servidor fora do ar!"))
+            .catch(() => setOpen(true))
     }
 
     const updateTrip = event => {
@@ -83,7 +101,7 @@ export default function Adm() {
 
         axios.put(`http://127.0.0.1:5000/viagens/${tripSelected.id}`, trip)
             .then(() => window.location.reload())
-            .catch(() => alert("Servidor fora do ar!"))
+            .catch(() => setOpen(true))
     }
 
     return (
@@ -95,13 +113,13 @@ export default function Adm() {
                     <div className='formTrips'>
                         <form onSubmit={sendTrip}>
                             <label htmlFor="destino">Destino</label>
-                            <input type="text" name="destino" id="destino" />
+                            <input type="text" name="destino" id="destino" required={true} />
                             <label htmlFor="origem">Origem</label>
-                            <input type="text" name="origem" id="origem" />
+                            <input type="text" name="origem" id="origem" required={true} />
                             <label htmlFor="valor">Valor</label>
-                            <input type="number" name="valor" id="valor" step={0.010} />
+                            <input type="number" name="valor" id="valor" step={0.010} required={true} />
                             <label htmlFor="urlimagem">URL imagem</label>
-                            <input type="text" name="urlimagem" id="urlimagem" />
+                            <input type="text" name="urlimagem" id="urlimagem" required={true} />
                             <input type="submit" value="Criar" />
                         </form>
                     </div>
@@ -151,18 +169,29 @@ export default function Adm() {
                     <div className='modalDiv formTrips'>
                         <form onSubmit={updateTrip}>
                             <label htmlFor="destino">Destino</label>
-                            <input type="text" name="destino" id="destino" checked={true} defaultValue={tripSelected != null ? tripSelected.destino : null} />
+                            <input type="text" name="destino" id="destino" required={true} defaultValue={tripSelected != null ? tripSelected.destino : null} />
                             <label htmlFor="origem">Origem</label>
-                            <input type="text" name="origem" id="origem" defaultValue={tripSelected != null ? tripSelected.origem : null} />
+                            <input type="text" name="origem" id="origem" required={true} defaultValue={tripSelected != null ? tripSelected.origem : null} />
                             <label htmlFor="valor">Valor</label>
-                            <input type="number" name="valor" id="valor" defaultValue={tripSelected != null ? tripSelected.valor : null} step={0.010}/>
+                            <input type="number" name="valor" id="valor" required={true} defaultValue={tripSelected != null ? tripSelected.valor : null} step={0.010} />
                             <label htmlFor="urlimagem">URL imagem</label>
-                            <input type="text" name="urlimagem" id="urlimagem" defaultValue={tripSelected != null ? tripSelected.urlFoto : null} />
+                            <input type="text" name="urlimagem" id="urlimagem" required={true} defaultValue={tripSelected != null ? tripSelected.urlFoto : null} />
                             <input type="submit" value="Atualizar" />
                         </form>
                     </div>
                 </Box>
             </Modal>
+
+            <Snackbar open={open} autoHideDuration={3000} onClose={handleCloseSnackBar}>
+                <Alert
+                    onClose={handleCloseSnackBar}
+                    severity='warning'
+                    variant="filled"
+                    sx={{ width: '100%' }}
+                >
+                    Servidor fora do ar!
+                </Alert>
+            </Snackbar>
         </main>
     )
 }
